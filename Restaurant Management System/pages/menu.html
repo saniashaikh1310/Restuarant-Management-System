@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu — Nexus Bite</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="rms-page-loader"><div class="rms-loader-plate"></div></div>
+    <header class="rms-nav">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a href="../index.html">Home</a>
+          <a class="active" href="menu.html">Menu</a>
+          <a href="reservation.html">Reserve</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="customer-dashboard.html">Account</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <a href="cart.html" class="rms-btn-icon" title="Cart" style="position: relative">
+            🛒
+            <span
+              data-cart-count
+              style="
+                display: none;
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                background: var(--accent);
+                color: #fff;
+                font-size: 0.65rem;
+                min-width: 18px;
+                height: 18px;
+                border-radius: 999px;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+              "
+              >0</span
+            >
+          </a>
+          <a href="login.html" class="rms-btn rms-btn-ghost">Login</a>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero" style="padding-bottom: 1rem">
+      <div class="rms-wrap">
+        <div data-aos="fade-up">
+          <div class="rms-kicker">Chef curated</div>
+          <h1 class="rms-title" style="text-align: left; margin-bottom: 0.5rem">Explore the menu</h1>
+          <p class="rms-sub" style="text-align: left; max-width: 520px">Search, filter by category, tag veg/non-veg, favorites, and live cart sync.</p>
+        </div>
+        <div class="rms-glass-strong" style="padding: 1rem 1.1rem; margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center" data-aos="fade-up">
+          <input id="menu-search" class="rms-input" style="flex: 1; min-width: 200px" type="search" placeholder="Search dishes, e.g. ramen, pizza…" />
+          <span style="color: var(--text-muted); font-size: 0.85rem">Live filters →</span>
+        </div>
+        <div class="rms-chip-row rms-mt" data-aos="fade-up">
+          <button type="button" class="rms-chip active" data-filter="all">All</button>
+          <button type="button" class="rms-chip" data-filter="pizza">Pizza</button>
+          <button type="button" class="rms-chip" data-filter="burger">Burger</button>
+          <button type="button" class="rms-chip" data-filter="asian">Asian</button>
+          <button type="button" class="rms-chip" data-filter="indian">Indian</button>
+          <button type="button" class="rms-chip" data-filter="healthy">Healthy</button>
+          <button type="button" class="rms-chip" data-filter="dessert">Dessert</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="rms-section rms-wrap" style="padding-top: 0">
+      <div class="rms-grid-cards" id="menu-grid"></div>
+    </section>
+
+    <a href="cart.html" class="rms-fab" title="Open cart" data-aos="zoom-in">🛒</a>
+
+    <button type="button" class="rms-chat-launcher" data-chat-launch aria-label="Assistant">✦</button>
+    <div class="rms-chat-panel rms-glass-strong">
+      <div class="rms-chat-head">Nexus Assistant</div>
+      <div class="rms-chat-body"><div class="rms-chat-msg bot">Ask me for pairings or spice levels.</div></div>
+      <div class="rms-chat-input-row">
+        <input type="text" data-chat-input placeholder="Message…" />
+        <button type="button" class="rms-btn rms-btn-primary" data-chat-send style="padding: 0.45rem 0.85rem">Send</button>
+      </div>
+    </div>
+
+    <footer class="rms-footer">
+      <div class="rms-wrap rms-footer-bottom" style="border: none; margin: 0; padding: 1rem 0 2rem">
+        <span>Need invoices? Checkout completes the flow.</span>
+        <a href="cart.html" style="color: var(--accent); font-weight: 600">Go to cart →</a>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="../script.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true });
+    </script>
+  </body>
+</html>

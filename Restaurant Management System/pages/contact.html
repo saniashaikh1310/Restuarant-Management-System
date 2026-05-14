@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a href="../index.html">Home</a>
+          <a href="faq.html">FAQ</a>
+          <a class="active" href="contact.html">Contact</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap rms-split">
+        <div class="rms-glass-strong" style="padding: 1.75rem">
+          <h1 style="margin-top: 0; font-family: var(--font-display)">Contact &amp; support</h1>
+          <p style="color: var(--text-muted)">Glass form with validation-ready fields.</p>
+          <form class="rms-mt" onsubmit="event.preventDefault(); NexusBite.toast('Message queued (demo)','success'); this.reset();">
+            <div class="rms-field">
+              <label>Name</label>
+              <input class="rms-input" required />
+            </div>
+            <div class="rms-field">
+              <label>Email</label>
+              <input class="rms-input" type="email" required />
+            </div>
+            <div class="rms-field">
+              <label>Message</label>
+              <textarea class="rms-input" rows="4" required style="resize: vertical"></textarea>
+            </div>
+            <button class="rms-btn rms-btn-primary" type="submit" style="width: 100%; padding: 0.95rem">Send message</button>
+          </form>
+        </div>
+        <div class="rms-glass" style="padding: 0; overflow: hidden; min-height: 360px">
+          <iframe
+            title="Map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=72.805%2C18.90%2C72.92%2C19.28&amp;layer=mapnik"
+            style="border: 0; width: 100%; height: 100%; min-height: 360px"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+  </body>
+</html>

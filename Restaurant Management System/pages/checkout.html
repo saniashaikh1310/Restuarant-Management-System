@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap" style="max-width: 720px; margin: 0 auto; padding-bottom: 3rem">
+        <h1 class="rms-title">Checkout</h1>
+        <p class="rms-sub">Address + payment method UI. Submitting stores a demo order locally.</p>
+
+        <div class="rms-glass-strong" style="padding: 1.75rem; margin-top: 1rem">
+          <form id="checkout-form">
+            <input type="hidden" name="payment" value="upi" />
+            <h3 style="margin-top: 0">Deliver to</h3>
+            <div class="rms-field">
+              <label>Address line</label>
+              <input class="rms-input" name="line" required placeholder="Flat, tower, street" />
+            </div>
+            <div class="rms-flex">
+              <div class="rms-field rms-grow">
+                <label>City</label>
+                <input class="rms-input" name="city" required />
+              </div>
+              <div class="rms-field" style="width: 140px">
+                <label>PIN</label>
+                <input class="rms-input" name="pin" required inputmode="numeric" maxlength="6" />
+              </div>
+            </div>
+            <h3>Payment</h3>
+            <div class="rms-payment-grid">
+              <div class="rms-pay-opt active" data-pay="upi">UPI</div>
+              <div class="rms-pay-opt" data-pay="card">Card</div>
+              <div class="rms-pay-opt" data-pay="cash">Cash</div>
+            </div>
+            <div class="rms-field rms-mt">
+              <label>Coupon (optional)</label>
+              <input class="rms-input" name="coupon" placeholder="NEXUS20 / FIRST50" />
+            </div>
+            <button type="submit" class="rms-btn rms-btn-primary rms-checkout-btn" style="width: 100%; margin-top: 1rem; padding: 1rem">Pay &amp; place order</button>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem">Cart must not be empty — add items from the menu first.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!NexusBite.getCart().length) {
+          NexusBite.toast("Cart is empty — redirecting", "error");
+          setTimeout(function () {
+            location.href = "menu.html";
+          }, 900);
+        }
+      });
+    </script>
+  </body>
+</html>

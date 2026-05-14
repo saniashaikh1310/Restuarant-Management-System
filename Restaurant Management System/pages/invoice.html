@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" onclick="window.print()" title="Print">⎙</button>
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap" style="max-width: 720px; margin: 0 auto; padding-bottom: 3rem">
+        <div class="rms-glass-strong" style="padding: 2rem" id="invoice-root">
+          <div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap">
+            <div>
+              <h1 style="margin: 0; font-family: var(--font-display)">Invoice</h1>
+              <p style="color: var(--text-muted); margin: 0.25rem 0 0" id="inv-id">—</p>
+            </div>
+            <div style="text-align: right">
+              <strong>Nexus Bite Pvt. Ltd.</strong>
+              <div style="color: var(--text-muted); font-size: 0.9rem">GSTIN demo · 27AAAAA0000A1Z5</div>
+            </div>
+          </div>
+          <hr style="border: none; border-top: 1px solid var(--border-glass); margin: 1.5rem 0" />
+          <div id="inv-lines"></div>
+          <div class="rms-summary-total" style="border: none; margin-top: 1rem">
+            <span>Grand total</span><span id="inv-total">₹0</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.88rem">Thank you — this invoice is generated client-side for presentation.</p>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var raw = localStorage.getItem("nexusbite_last_order");
+        if (!raw) {
+          document.getElementById("inv-id").textContent = "No invoice yet — complete a checkout.";
+          return;
+        }
+        var o = JSON.parse(raw);
+        document.getElementById("inv-id").textContent = o.id + " · " + new Date(o.at).toLocaleString();
+        var html = (o.items || [])
+          .map(function (it) {
+            return (
+              "<div class='rms-summary-row'><span>" +
+              it.name +
+              " × " +
+              it.qty +
+              "</span><span>₹" +
+              it.price * it.qty +
+              "</span></div>"
+            );
+          })
+          .join("");
+        document.getElementById("inv-lines").innerHTML = html;
+        document.getElementById("inv-total").textContent = "₹" + (o.totals && o.totals.total ? o.totals.total : 0);
+      });
+    </script>
+  </body>
+</html>

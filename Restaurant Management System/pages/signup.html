@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up — Nexus Bite</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="rms-page-loader"><div class="rms-loader-plate"></div></div>
+    <header class="rms-nav">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a href="../index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a class="active" href="signup.html">Sign up</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <a href="login.html" class="rms-btn rms-btn-ghost">Login</a>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap rms-auth-layout">
+        <div class="rms-glass-strong rms-auth-panel" data-aos="fade-right">
+          <h1 style="margin-top: 0; font-family: var(--font-display)">Create your account</h1>
+          <form id="signup-form">
+            <div class="rms-field">
+              <label for="name">Full name</label>
+              <input class="rms-input" id="name" name="name" required />
+            </div>
+            <div class="rms-field">
+              <label for="email">Email</label>
+              <input class="rms-input" id="email" name="email" type="email" required />
+            </div>
+            <div class="rms-field">
+              <label for="phone">Phone</label>
+              <input class="rms-input" id="phone" name="phone" inputmode="numeric" placeholder="+91 ······" />
+            </div>
+            <div class="rms-field">
+              <label for="password">Password</label>
+              <div class="rms-input-wrap">
+                <input class="rms-input" id="password" name="password" type="password" required />
+                <button type="button" class="rms-toggle-pass" data-toggle-pass="password">👁</button>
+              </div>
+            </div>
+            <label class="rms-check rms-mb"><input type="checkbox" required /> I agree to the terms &amp; privacy policy</label>
+            <button type="submit" class="rms-btn rms-btn-primary" style="width: 100%; padding: 0.95rem">Create account</button>
+            <p class="rms-center rms-mt" style="color: var(--text-muted)">Already a member? <a href="login.html" style="color: var(--accent); font-weight: 600">Sign in</a></p>
+          </form>
+        </div>
+        <div class="rms-glass rms-auth-panel decor" data-aos="fade-left" style="min-height: 380px; display: grid; place-items: center; text-align: center; padding: 2rem">
+          <div>
+            <div style="font-size: 3rem; margin-bottom: 0.5rem">✦</div>
+            <h2 style="font-family: var(--font-display); margin: 0 0 0.5rem">Unlock loyalty</h2>
+            <p style="color: var(--text-muted); margin: 0">Earn points on every demo checkout.</p>
+            <a class="rms-btn rms-btn-ghost rms-mt" href="otp.html">Simulate OTP screen →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="../script.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true });
+      gsap.from("form .rms-field", { x: -16, opacity: 0, stagger: 0.07, duration: 0.55, ease: "power2.out", delay: 0.1 });
+    </script>
+  </body>
+</html>

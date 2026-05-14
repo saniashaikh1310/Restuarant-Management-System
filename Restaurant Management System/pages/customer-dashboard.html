@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My account — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="rms-page-loader"><div class="rms-loader-plate"></div></div>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a href="menu.html">Menu</a>
+          <a class="active" href="customer-dashboard.html">Account</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap">
+        <h1 class="rms-title" style="text-align: left">Customer cockpit</h1>
+        <p class="rms-sub" style="text-align: left">Orders, favorites, loyalty, notifications — all wired to local demo data.</p>
+
+        <div class="rms-dash-grid rms-mt">
+          <div class="rms-metric rms-glass">
+            <h3>Loyalty points</h3>
+            <div class="val" id="cust-loyalty">120</div>
+          </div>
+          <div class="rms-metric rms-glass">
+            <h3>Saved addresses</h3>
+            <div class="val">2</div>
+          </div>
+          <div class="rms-metric rms-glass">
+            <h3>Active vouchers</h3>
+            <div class="val">1</div>
+          </div>
+          <div class="rms-metric rms-glass">
+            <h3>VIP tier</h3>
+            <div class="val">Gold</div>
+          </div>
+        </div>
+
+        <div class="rms-dash-panels rms-mt">
+          <div class="rms-glass-strong" style="padding: 1.25rem">
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Order history</h3>
+            <div id="cust-orders"></div>
+          </div>
+          <div class="rms-glass" style="padding: 1.25rem">
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Favorite dishes</h3>
+            <div id="cust-favs"></div>
+            <hr style="border: none; border-top: 1px solid var(--border-glass); margin: 1.25rem 0" />
+            <h3 style="font-family: var(--font-display)">Notifications</h3>
+            <div style="font-size: 0.9rem; color: var(--text-muted)">
+              <div style="margin-bottom: 0.5rem">🔥 Weekend flash: 20% off bowls</div>
+              <div>📍 New cloud kitchen in your zone</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rms-glass-strong rms-mt" style="padding: 1.5rem; margin-top: 1rem">
+          <h3 style="margin-top: 0; font-family: var(--font-display)">Profile</h3>
+          <form
+            onsubmit="event.preventDefault(); NexusBite.toast('Profile saved (demo)','success');"
+            class="rms-split"
+            style="grid-template-columns: 1fr 1fr; gap: 1rem"
+          >
+            <div class="rms-field">
+              <label>Display name</label>
+              <input class="rms-input" value="Guest foodie" />
+            </div>
+            <div class="rms-field">
+              <label>Diet preference</label>
+              <select class="rms-select">
+                <option>Everything</option>
+                <option>Veg only</option>
+                <option>Vegan</option>
+              </select>
+            </div>
+            <div class="rms-field" style="grid-column: 1/-1">
+              <label>Default address</label>
+              <input class="rms-input" placeholder="Tower, street, city" />
+            </div>
+            <button type="submit" class="rms-btn rms-btn-primary" style="grid-column: 1/-1">Save profile</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Bite — Premium Restaurant & Delivery</title>
+    <meta
+      name="description"
+      content="Nexus Bite — futuristic restaurant ordering, reservations, and rewards. Demo UI for engineering showcase."
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="rms-page-loader" aria-hidden="true">
+      <div class="rms-loader-plate"></div>
+    </div>
+
+    <header class="rms-nav">
+      <div class="rms-nav-inner">
+        <a href="index.html" class="rms-logo">
+          <span class="rms-logo-mark">◆</span>
+          Nexus Bite
+        </a>
+        <div class="rms-nav-overlay" aria-hidden="true"></div>
+        <nav class="rms-nav-links" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="pages/menu.html">Menu</a>
+          <a href="pages/reservation.html">Reserve</a>
+          <a href="pages/gallery.html">Gallery</a>
+          <a href="pages/faq.html">FAQ</a>
+          <a href="pages/contact.html">Contact</a>
+          <a href="pages/customer-dashboard.html">Account</a>
+          <a href="pages/admin-dashboard.html">Admin</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <a href="pages/cart.html" class="rms-btn-icon" title="Cart" style="position: relative">
+            🛒
+            <span
+              data-cart-count
+              style="
+                display: none;
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                background: var(--accent);
+                color: #fff;
+                font-size: 0.65rem;
+                min-width: 18px;
+                height: 18px;
+                border-radius: 999px;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+              "
+              >0</span
+            >
+          </a>
+          <a href="pages/login.html" class="rms-btn rms-btn-ghost">Login</a>
+          <a href="pages/signup.html" class="rms-btn rms-btn-primary">Sign up</a>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="rms-hero">
+        <div class="rms-float-orb a" data-parallax="0.08"></div>
+        <div class="rms-float-orb b" data-parallax="0.12"></div>
+        <div class="rms-wrap rms-hero-grid">
+          <div data-aos="fade-right">
+            <div class="rms-hero-badge"><span>●</span> Live in your city · 4.9 app rating</div>
+            <h1>
+              Food that hits different <br /><span class="rms-gradient-text">Order </span
+              ><span id="typed-hero"></span>
+            </h1>
+            <p class="rms-hero-lead">
+              Hyper-smooth ordering, chef-curated menus, and neon-night aesthetics — engineered to feel like a
+              production food platform, not a classroom template.
+            </p>
+            <div class="rms-hero-cta">
+              <a href="pages/menu.html" class="rms-btn rms-btn-primary">Order Now</a>
+              <a href="pages/reservation.html" class="rms-btn rms-btn-ghost">Book a table</a>
+            </div>
+            <div class="rms-hero-stats">
+              <div data-aos="fade-up" data-aos-delay="80">
+                <div class="rms-stat-num" data-counter="120" data-counter-suffix="K+">0K+</div>
+                <div class="rms-stat-label">Happy deliveries</div>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="140">
+                <div class="rms-stat-num" data-counter="4.9" data-counter-suffix="">0</div>
+                <div class="rms-stat-label">Customer rating</div>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="200">
+                <div class="rms-stat-num" data-counter="18" data-counter-suffix=" min">0 min</div>
+                <div class="rms-stat-label">Avg. delivery</div>
+              </div>
+            </div>
+          </div>
+          <div class="rms-hero-visual" data-aos="zoom-in">
+            <div class="rms-plate">
+              <span class="rms-ring"></span>
+              <img
+                src="https://images.unsplash.com/photo-1504674900240-87c30813f79d?w=800&q=80"
+                alt="Signature plated dish"
+              />
+            </div>
+            <div class="rms-mini-card c1">🔥 Trending #1</div>
+            <div class="rms-mini-card c2">Chef’s pick tonight</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rms-section rms-wrap" id="trending">
+        <div class="rms-section-head" data-aos="fade-up">
+          <div class="rms-kicker">Curated for you</div>
+          <h2 class="rms-title">Trending dishes</h2>
+          <p class="rms-sub">Glass cards, depth shadows, and motion cues inspired by leading delivery apps.</p>
+        </div>
+        <div class="rms-grid-cards" id="home-trending"></div>
+      </section>
+
+      <section class="rms-section" style="background: linear-gradient(180deg, transparent, rgba(255, 94, 58, 0.04))">
+        <div class="rms-wrap">
+          <div class="rms-section-head" data-aos="fade-up">
+            <div class="rms-kicker">Voices</div>
+            <h2 class="rms-title">Loved by night owls &amp; foodies</h2>
+            <p class="rms-sub">Swiper-powered testimonials with glass panels.</p>
+          </div>
+          <div class="swiper rms-testimonial-swiper rms-swiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="rms-glass" style="padding: 1.5rem; height: 100%">
+                  <p style="color: var(--text-muted); margin-top: 0">
+                    “Feels like Swiggy met a sci-fi film. Animations are buttery and the cart UX is clean.”
+                  </p>
+                  <strong>Ayaan K.</strong> · Pune
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="rms-glass" style="padding: 1.5rem; height: 100%">
+                  <p style="color: var(--text-muted); margin-top: 0">
+                    “Reservation flow + dark mode toggle sold it for my HCI presentation.”
+                  </p>
+                  <strong>Riya S.</strong> · Mumbai
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="rms-glass" style="padding: 1.5rem; height: 100%">
+                  <p style="color: var(--text-muted); margin-top: 0">
+                    “Counters, GSAP hero, and invoice page — viva-ready polish.”
+                  </p>
+                  <strong>Dev P.</strong> · Bengaluru
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination" style="position: relative; margin-top: 1rem"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rms-section rms-wrap" id="ratings">
+        <div class="rms-split">
+          <div class="rms-glass" style="padding: 2rem" data-aos="fade-right">
+            <div class="rms-kicker">Trust layer</div>
+            <h2 class="rms-title" style="text-align: left">Ratings that glow</h2>
+            <p class="rms-sub" style="text-align: left">
+              Social proof section with parallax mesh background and responsive glass layout.
+            </p>
+            <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap">
+              <div>
+                <div class="rms-stat-num">4.9</div>
+                <div class="rms-stat-label">App store</div>
+              </div>
+              <div>
+                <div class="rms-stat-num">2.4M</div>
+                <div class="rms-stat-label">Orders fulfilled</div>
+              </div>
+              <div>
+                <div class="rms-stat-num">98%</div>
+                <div class="rms-stat-label">On-time delivery</div>
+              </div>
+            </div>
+          </div>
+          <div class="rms-glass-strong" style="padding: 1.5rem" data-aos="fade-left">
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Live kitchen pulse</h3>
+            <p style="color: var(--text-muted)">
+              Prep stations synced, riders mapped, and tickets prioritized — presentation copy for dashboard narrative.
+            </p>
+            <div class="rms-mt rms-flex">
+              <span class="rms-tag veg">veg lanes</span>
+              <span class="rms-tag nonveg">grill deck</span>
+              <span class="rms-tag" style="background: rgba(100, 210, 255, 0.15); color: #7dd3fc">cold chain ✓</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rms-section rms-wrap" id="gallery-teaser">
+        <div class="rms-section-head" data-aos="fade-up">
+          <div class="rms-kicker">Visual feast</div>
+          <h2 class="rms-title">Food gallery</h2>
+          <p class="rms-sub">High-quality photography with hover depth — see the full grid on the gallery page.</p>
+        </div>
+        <div class="rms-grid-cards">
+          <a href="pages/gallery.html" class="rms-food-card" data-aos="zoom-in" style="text-decoration: none">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="" /></div>
+            <div class="body"><h3 class="rms-food-title">Fresh bowls</h3></div>
+          </a>
+          <a href="pages/gallery.html" class="rms-food-card" data-aos="zoom-in" data-aos-delay="60" style="text-decoration: none">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="" /></div>
+            <div class="body"><h3 class="rms-food-title">Grill marks</h3></div>
+          </a>
+          <a href="pages/gallery.html" class="rms-food-card" data-aos="zoom-in" data-aos-delay="120" style="text-decoration: none">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=80" alt="" /></div>
+            <div class="body"><h3 class="rms-food-title">Pasta nights</h3></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="rms-section rms-wrap" id="faq">
+        <div class="rms-section-head" data-aos="fade-up">
+          <div class="rms-kicker">Help desk</div>
+          <h2 class="rms-title">Interactive FAQ</h2>
+          <p class="rms-sub">Accordion-style answers with focus-visible accessibility.</p>
+        </div>
+        <div class="rms-glass" style="padding: 0; overflow: hidden" data-aos="fade-up">
+          <details style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-glass)">
+            <summary style="cursor: pointer; font-weight: 600">How does the demo cart work?</summary>
+            <p style="color: var(--text-muted)">Cart state is stored in <code>localStorage</code> so you can refresh safely during your viva.</p>
+          </details>
+          <details style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-glass)">
+            <summary style="cursor: pointer; font-weight: 600">Is there a real payment gateway?</summary>
+            <p style="color: var(--text-muted)">No — checkout is UI-only. Pair with the C++ module for file-backed billing logic.</p>
+          </details>
+          <details style="padding: 1rem 1.25rem">
+            <summary style="cursor: pointer; font-weight: 600">Where is the backend?</summary>
+            <p style="color: var(--text-muted)">See the <code>backend/</code> folder for OOP modules: users, menu, orders, billing, reservations.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rms-footer">
+      <div class="rms-wrap rms-footer-grid">
+        <div>
+          <div class="rms-logo" style="margin-bottom: 0.75rem">
+            <span class="rms-logo-mark">◆</span> Nexus Bite
+          </div>
+          <p style="color: var(--text-muted); max-width: 320px">
+            Futuristic restaurant UX + structured C++ domain layer — built to impress reviewers and stay easy to extend.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="pages/menu.html">Menu</a></li>
+            <li><a href="pages/cart.html">Cart</a></li>
+            <li><a href="pages/checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="pages/faq.html">FAQ</a></li>
+            <li><a href="pages/reservation.html">Reservations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Dashboards</h4>
+          <ul>
+            <li><a href="pages/customer-dashboard.html">Customer</a></li>
+            <li><a href="pages/admin-dashboard.html">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rms-wrap rms-footer-bottom">
+        <span>© 2026 Nexus Bite · Engineering showcase</span>
+         <span>Made By : Sania Shaikh and Swara Tilay</span>
+        <span>Crafted with HTML · CSS · JS · C++</span>
+      </div>
+    </footer>
+
+    <button type="button" class="rms-chat-launcher" data-chat-launch aria-label="Open assistant">✦</button>
+    <div class="rms-chat-panel rms-glass-strong" aria-live="polite">
+      <div class="rms-chat-head">Nexus Assistant · AI UI</div>
+      <div class="rms-chat-body">
+        <div class="rms-chat-msg bot">Hey! Ask about offers, delivery ETA, or chef specials.</div>
+      </div>
+      <div class="rms-chat-input-row">
+        <input type="text" placeholder="Type a message…" data-chat-input />
+        <button type="button" class="rms-btn rms-btn-primary" data-chat-send style="padding: 0.45rem 0.9rem">Send</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var el = document.getElementById("home-trending");
+        if (!el || !window.NexusBite) return;
+        var menu = NexusBite.getMenu().slice(0, 4);
+        el.innerHTML = menu
+          .map(function (m) {
+            return (
+              '<article class="rms-food-card" data-aos="fade-up">' +
+              '<div class="thumb"><img src="' +
+              m.image +
+              '" alt="' +
+              m.name +
+              '" loading="lazy"/></div>' +
+              '<div class="body"><div class="rms-tag-row">' +
+              '<span class="rms-tag ' +
+              (m.veg ? "veg" : "nonveg") +
+              '">' +
+              (m.veg ? "Veg" : "Non-veg") +
+              "</span>" +
+              '<span class="rms-tag" style="background:rgba(100,210,255,.15);color:#7dd3fc">★ ' +
+              m.rating +
+              "</span></div>" +
+              '<h3 class="rms-food-title">' +
+              m.name +
+              '</h3><div class="rms-food-meta"><span>' +
+              m.category +
+              '</span><span class="rms-price">₹' +
+              m.price +
+              "</span></div>" +
+              '<div class="rms-card-actions"><a class="rms-btn rms-btn-primary rms-grow" href="pages/menu.html">View menu</a></div>' +
+              "</div></article>"
+            );
+          })
+          .join("");
+        if (window.AOS) AOS.refreshHard && AOS.refreshHard();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="rms-page-loader"><div class="rms-loader-plate"></div></div>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite Admin</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a class="active" href="admin-dashboard.html">Overview</a>
+          <a href="menu.html">Menu</a>
+          <a href="customer-dashboard.html">Customers</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero" style="padding-top: calc(var(--nav-h) + 1rem)">
+      <div class="rms-wrap">
+        <div class="rms-kicker">Command center</div>
+        <h1 class="rms-title" style="text-align: left; margin-bottom: 0.35rem">Operations dashboard</h1>
+        <p class="rms-sub" style="text-align: left">Analytics, orders, menu CRUD demo, inventory snapshot.</p>
+
+        <div class="rms-dash-grid rms-mt">
+          <div class="rms-metric rms-glass" data-aos="fade-up">
+            <h3>Daily revenue</h3>
+            <div class="val" data-metric-revenue>₹0</div>
+          </div>
+          <div class="rms-metric rms-glass" data-aos="fade-up">
+            <h3>Active orders</h3>
+            <div class="val" id="metric-orders">0</div>
+          </div>
+          <div class="rms-metric rms-glass" data-aos="fade-up">
+            <h3>Table occupancy</h3>
+            <div class="val">72%</div>
+          </div>
+          <div class="rms-metric rms-glass" data-aos="fade-up">
+            <h3>NPS pulse</h3>
+            <div class="val">68</div>
+          </div>
+        </div>
+
+        <div class="rms-dash-panels">
+          <div class="rms-glass-strong" style="padding: 1.25rem">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem">
+              <h3 style="margin: 0; font-family: var(--font-display)">Sales pulse</h3>
+              <span style="color: var(--text-muted); font-size: 0.85rem">GSAP bars</span>
+            </div>
+            <div class="rms-bar-chart">
+              <div class="rms-bar" style="height: 45%"></div>
+              <div class="rms-bar" style="height: 70%"></div>
+              <div class="rms-bar" style="height: 55%"></div>
+              <div class="rms-bar" style="height: 90%"></div>
+              <div class="rms-bar" style="height: 65%"></div>
+              <div class="rms-bar" style="height: 78%"></div>
+              <div class="rms-bar" style="height: 50%"></div>
+            </div>
+          </div>
+          <div class="rms-glass" style="padding: 1.25rem">
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Recent activity</h3>
+            <div data-admin-activity></div>
+          </div>
+        </div>
+
+        <div class="rms-glass-strong rms-mt" style="padding: 1.25rem; margin-top: 1rem">
+          <h3 style="margin-top: 0; font-family: var(--font-display)">Orders</h3>
+          <div style="overflow-x: auto">
+            <table class="rms-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Time</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody data-admin-orders></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="rms-split rms-mt" style="margin-top: 1rem">
+          <div class="rms-glass-strong" style="padding: 1.25rem">
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Menu management</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem">Delete rows to mutate localStorage menu (demo).</p>
+            <table class="rms-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody data-admin-menu></tbody>
+            </table>
+          </div>
+          <div class="rms-glass" style="padding: 1.25rem">
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Inventory</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-muted); font-size: 0.92rem">
+              <li style="margin-bottom: 0.5rem">Saffron threads · <strong style="color: var(--text-primary)">Low</strong></li>
+              <li style="margin-bottom: 0.5rem">Wood-fired dough · <strong style="color: var(--success)">OK</strong></li>
+              <li style="margin-bottom: 0.5rem">Truffle oil · <strong style="color: var(--accent)">Reorder</strong></li>
+              <li>Delivery thermal bags · <strong style="color: var(--success)">OK</strong></li>
+            </ul>
+            <button type="button" class="rms-btn rms-btn-ghost rms-mt" style="width: 100%" onclick="NexusBite.toast('Stock sync queued','success')">Run stock sync</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="../script.js"></script>
+    <script>
+      AOS.init({ duration: 650, once: true });
+    </script>
+  </body>
+</html>

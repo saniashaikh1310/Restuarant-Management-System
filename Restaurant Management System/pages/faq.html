@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a href="../index.html">Home</a>
+          <a class="active" href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap" style="max-width: 760px; margin: 0 auto; padding-bottom: 3rem">
+        <h1 class="rms-title">FAQ</h1>
+        <p class="rms-sub">Accordion UX for quick answers during demos.</p>
+        <div class="rms-glass-strong" style="padding: 0; overflow: hidden; margin-top: 1rem">
+          <details style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-glass)">
+            <summary style="cursor: pointer; font-weight: 600">How do coupons work?</summary>
+            <p style="color: var(--text-muted)">Use <code>NEXUS20</code> for 20% off subtotal or <code>FIRST50</code> for flat ₹50 (capped).</p>
+          </details>
+          <details style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-glass)">
+            <summary style="cursor: pointer; font-weight: 600">Where is data stored?</summary>
+            <p style="color: var(--text-muted)">Browser <code>localStorage</code> for the SPA demo. C++ modules persist to text files under <code>backend/data/</code>.</p>
+          </details>
+          <details style="padding: 1rem 1.25rem">
+            <summary style="cursor: pointer; font-weight: 600">Can I connect a database?</summary>
+            <p style="color: var(--text-muted)">Yes — replace file persistence with SQLite or a REST API; OOP layer stays the same.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+  </body>
+</html>

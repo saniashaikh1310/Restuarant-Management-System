@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order placed — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap rms-center" style="padding-bottom: 4rem">
+        <div class="rms-success-check" id="success-icon">✓</div>
+        <h1 class="rms-title">Order confirmed</h1>
+        <p class="rms-sub" id="order-id-line" style="margin: 0 auto 1.5rem">Your kitchen ticket is being prepared.</p>
+        <div class="rms-flex" style="justify-content: center">
+          <a class="rms-btn rms-btn-primary" href="invoice.html">View invoice</a>
+          <a class="rms-btn rms-btn-ghost" href="tracking.html">Track delivery</a>
+          <a class="rms-btn rms-btn-ghost" href="../index.html">Home</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="../script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var raw = localStorage.getItem("nexusbite_last_order");
+        if (raw) {
+          try {
+            var o = JSON.parse(raw);
+            document.getElementById("order-id-line").textContent = "Order " + o.id + " · paid via " + (o.payment || "UPI");
+          } catch (e) {}
+        }
+        if (window.gsap) {
+          gsap.from("#success-icon", { scale: 0, rotation: -40, duration: 0.75, ease: "elastic.out(1,0.55)" });
+          gsap.from(".rms-title", { y: 24, opacity: 0, duration: 0.55, delay: 0.15 });
+        }
+      });
+    </script>
+  </body>
+</html>

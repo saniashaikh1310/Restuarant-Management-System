@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP verification — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap" style="max-width: 440px; margin: 0 auto; padding-bottom: 4rem">
+        <div class="rms-glass-strong" style="padding: 2rem; text-align: center">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem">🔐</div>
+          <h1 style="margin: 0 0 0.5rem; font-family: var(--font-display)">Enter OTP</h1>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem">We’ve sent a 6-digit code to your email (simulated).</p>
+          <div class="rms-flex" style="justify-content: center; gap: 0.5rem">
+            <input class="rms-input" maxlength="1" style="width: 48px; text-align: center; padding: 0.75rem" />
+            <input class="rms-input" maxlength="1" style="width: 48px; text-align: center; padding: 0.75rem" />
+            <input class="rms-input" maxlength="1" style="width: 48px; text-align: center; padding: 0.75rem" />
+            <input class="rms-input" maxlength="1" style="width: 48px; text-align: center; padding: 0.75rem" />
+            <input class="rms-input" maxlength="1" style="width: 48px; text-align: center; padding: 0.75rem" />
+            <input class="rms-input" maxlength="1" style="width: 48px; text-align: center; padding: 0.75rem" />
+          </div>
+          <button
+            type="button"
+            class="rms-btn rms-btn-primary rms-mt"
+            style="width: 100%; padding: 0.9rem"
+            onclick="NexusBite.toast('Verified (demo)','success'); location.href='login.html'"
+          >
+            Verify &amp; continue
+          </button>
+          <p class="rms-mt" style="color: var(--text-muted); font-size: 0.9rem">Didn’t get it? <a href="#" onclick="NexusBite.toast('OTP resent','success');return false" style="color:var(--accent);font-weight:600">Resend</a></p>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+  </body>
+</html>

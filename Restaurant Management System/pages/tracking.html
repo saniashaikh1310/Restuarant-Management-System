@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track order — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap" style="max-width: 640px; margin: 0 auto; padding-bottom: 3rem">
+        <h1 class="rms-title">Delivery tracking</h1>
+        <p class="rms-sub" id="track-head">Live status simulation for UI review.</p>
+        <div class="rms-glass-strong" style="padding: 1.75rem; margin-top: 1rem">
+          <div class="rms-track">
+            <div class="rms-track-step done"><strong>Order received</strong><div style="color:var(--text-muted);font-size:.88rem">Kitchen acknowledged your ticket</div></div>
+            <div class="rms-track-step done"><strong>Preparing</strong><div style="color:var(--text-muted);font-size:.88rem">Chef station · high heat</div></div>
+            <div class="rms-track-step done"><strong>Out for delivery</strong><div style="color:var(--text-muted);font-size:.88rem">Rider en route · ETA 12–18 min</div></div>
+            <div class="rms-track-step"><strong>Delivered</strong><div style="color:var(--text-muted);font-size:.88rem">Handoff at your door</div></div>
+          </div>
+          <div class="rms-flex rms-mt" style="margin-top: 1.5rem">
+            <button type="button" class="rms-btn rms-btn-primary" onclick="NexusBite.toast('Rider pinged (demo)','success')">Contact rider</button>
+            <a href="customer-dashboard.html" class="rms-btn rms-btn-ghost">Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var raw = localStorage.getItem("nexusbite_last_order");
+        if (raw) {
+          var o = JSON.parse(raw);
+          document.getElementById("track-head").textContent = "Tracking " + o.id;
+        }
+      });
+    </script>
+  </body>
+</html>

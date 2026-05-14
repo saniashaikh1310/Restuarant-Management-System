@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart — Nexus Bite</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="rms-page-loader"><div class="rms-loader-plate"></div></div>
+    <header class="rms-nav scrolled">
+      <div class="rms-nav-inner">
+        <a href="../index.html" class="rms-logo"><span class="rms-logo-mark">◆</span> Nexus Bite</a>
+        <div class="rms-nav-overlay"></div>
+        <nav class="rms-nav-links">
+          <a href="menu.html">Menu</a>
+          <a class="active" href="cart.html">Cart</a>
+          <a href="checkout.html">Checkout</a>
+        </nav>
+        <div class="rms-nav-actions">
+          <button type="button" class="rms-btn-icon" data-theme-toggle title="Toggle theme">☾</button>
+          <button type="button" class="rms-burger" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="rms-page-hero">
+      <div class="rms-wrap">
+        <h1 class="rms-title" style="margin-bottom: 0.5rem">Your cart</h1>
+        <p class="rms-sub" style="max-width: 520px">Delivery fee waives above ₹499. Try coupons <strong>NEXUS20</strong> or <strong>FIRST50</strong>.</p>
+
+        <div id="cart-empty" class="rms-glass rms-empty-cart" hidden>
+          <div class="rms-empty-illu">🍽</div>
+          <h2 style="font-family: var(--font-display); margin: 0 0 0.5rem">Hungry much?</h2>
+          <p style="color: var(--text-muted)">Your cart is empty — add something delicious.</p>
+          <a class="rms-btn rms-btn-primary rms-mt" href="menu.html">Browse menu</a>
+        </div>
+
+        <div class="rms-split rms-mt">
+          <div id="cart-list"></div>
+          <aside class="rms-summary rms-glass-strong" id="cart-summary-panel" hidden>
+            <h3 style="margin-top: 0; font-family: var(--font-display)">Bill summary</h3>
+            <div class="rms-summary-row"><span>Subtotal</span><span id="sum-sub">₹0</span></div>
+            <div class="rms-summary-row"><span>Delivery</span><span id="sum-del">₹0</span></div>
+            <div class="rms-summary-row"><span>Discount</span><span id="sum-dis">₹0</span></div>
+            <div class="rms-coupon">
+              <input id="cart-coupon" class="rms-input" placeholder="Coupon code" style="padding: 0.65rem 0.85rem" />
+            </div>
+            <div class="rms-summary-total"><span>Total</span><span id="sum-total">₹0</span></div>
+            <a href="checkout.html" class="rms-btn rms-btn-primary rms-checkout-btn">Proceed to checkout</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+  </body>
+</html>
